@@ -231,12 +231,17 @@ h6 {
           column-gap: 0.625rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  list-style: none;
+}
+
+.price-spollers__title::marker,
+.price-spollers__title::-webkit-details-marker {
+  display: none;
 }
 
 .price-spollers__title span {
   color: #000;
   font-family: "Proxima Nova";
-  font-size: 24px;
   font-weight: 600;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
