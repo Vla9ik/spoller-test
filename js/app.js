@@ -242,7 +242,7 @@
             }));
         }
     }), 0);
-    window["FLS"] = false;
+    window["FLS"] = true;
     isWebp();
     spollers();
 })();

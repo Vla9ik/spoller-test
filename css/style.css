@@ -3,9 +3,7 @@
 @font-face {
   font-family: Proxima Nova;
   font-display: swap;
-  src:
-    url("../fonts/ProximaNovaBold.woff2") format("woff2"),
-    url("../fonts/ProximaNovaBold.woff") format("woff");
+  src: url("../fonts/ProximaNovaBold.woff2") format("woff2"), url("../fonts/ProximaNovaBold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -13,9 +11,7 @@
 @font-face {
   font-family: Proxima Nova;
   font-display: swap;
-  src:
-    url("../fonts/ProximaNovaRegular.woff2") format("woff2"),
-    url("../fonts/ProximaNovaRegular.woff") format("woff");
+  src: url("../fonts/ProximaNovaRegular.woff2") format("woff2"), url("../fonts/ProximaNovaRegular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -23,17 +19,193 @@
 @font-face {
   font-family: Proxima Nova;
   font-display: swap;
-  src:
-    url("../fonts/ProximaNovaSemiBold.woff2") format("woff2"),
-    url("../fonts/ProximaNovaSemiBold.woff") format("woff");
+  src: url("../fonts/ProximaNovaSemiBold.woff2") format("woff2"), url("../fonts/ProximaNovaSemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 
-.spollers-inner {
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "Proxima Nova";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Proxima Nova";
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+@supports (overflow: clip) {
+  .wrapper {
+    overflow: clip;
+  }
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стилі будуть застосовуватись до
+всіх класів, що містять *__container
+Наприклад header__container, main__container і т.п.
+Сніппет (HTML): cnt
+*/
+
+[class*=__container] {
+  max-width: 76.875rem;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+.ibg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.ibg--top {
+  -o-object-position: top;
+     object-position: top;
+}
+
+.ibg--bottom {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+.ibg--left {
+  -o-object-position: left;
+     object-position: left;
+}
+
+.ibg--right {
+  -o-object-position: right;
+     object-position: right;
+}
+
+.ibg--contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.page__container {
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
   display: -ms-grid;
   display: grid;
+  gap: 3.125rem;
+}
+
+.spollers-block {
   max-width: 51.875rem;
+}
+
+.spollers-block__footer {
+  margin-top: 2rem;
+  color: #828282;
+  font-family: "Proxima Nova";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  /* 16.8px */
 }
 
 .price-spollers {
@@ -69,14 +241,14 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-column-gap: 0.625rem;
-  -moz-column-gap: 0.625rem;
-  column-gap: 0.625rem;
+     -moz-column-gap: 0.625rem;
+          column-gap: 0.625rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   list-style: none;
@@ -100,8 +272,8 @@
 .price-spollers__title img {
   max-width: 100%;
   -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -113,8 +285,8 @@
 
 .price-spollers__title._spoller-active img {
   -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 .price-spollers__title._spoller-active span {
@@ -123,16 +295,6 @@
 
 .price-spollers__title._spoller-active + .price-spollers__body {
   margin-bottom: 2rem;
-}
-
-.price-spollers__footer {
-  margin-top: 1rem;
-  color: #828282;
-  font-family: "Proxima Nova";
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 120%;
-  /* 16.8px */
 }
 
 .price-block {
@@ -150,14 +312,14 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-column-gap: 0.75rem;
-  -moz-column-gap: 0.75rem;
-  column-gap: 0.75rem;
+     -moz-column-gap: 0.75rem;
+          column-gap: 0.75rem;
 }
 
 .price-block__left-side {
@@ -165,11 +327,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-column-gap: 0.5rem;
-  -moz-column-gap: 0.5rem;
-  column-gap: 0.5rem;
+     -moz-column-gap: 0.5rem;
+          column-gap: 0.5rem;
   row-gap: 0.3125rem;
 }
 
@@ -180,6 +342,10 @@
   font-weight: 600;
   line-height: 1;
   /* 100% */
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  min-width: 32px;
 }
 
 .price-block__name {
@@ -189,13 +355,13 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-column-gap: 0.5rem;
-  -moz-column-gap: 0.5rem;
-  column-gap: 0.5rem;
+     -moz-column-gap: 0.5rem;
+          column-gap: 0.5rem;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   row-gap: 0.3125rem;
 }
 
@@ -220,11 +386,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-column-gap: 0.625rem;
-  -moz-column-gap: 0.625rem;
-  column-gap: 0.625rem;
+     -moz-column-gap: 0.625rem;
+          column-gap: 0.625rem;
 }
 
 .price-block__current-cost {
@@ -233,11 +399,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-column-gap: 0.25rem;
-  -moz-column-gap: 0.25rem;
-  column-gap: 0.25rem;
+     -moz-column-gap: 0.25rem;
+          column-gap: 0.25rem;
   color: #333;
   font-family: "Proxima Nova";
   font-style: normal;
@@ -281,6 +447,15 @@
   font-weight: 600;
 }
 
+.price-block__footer {
+  color: #828282;
+  font-family: "Proxima Nova";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  /* 16.8px */
+}
+
 @media (min-width: 75em) {
   .price-spollers__title span {
     font-size: 1.5rem;
@@ -308,14 +483,14 @@
 }
 
 @media (min-width: 120em) {
-  .spollers-inner {
-    row-gap: 8rem;
+  .price-spollers:not(:last-child) {
+    margin-bottom: 8rem;
   }
 }
 
 @media (max-width: 30em) {
-  .spollers-inner {
-    row-gap: 2.8125rem;
+  .price-spollers:not(:last-child) {
+    margin-bottom: 2.8125rem;
   }
 }
 
@@ -328,8 +503,8 @@
 
   .price-block__string {
     -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 
@@ -337,11 +512,11 @@
   .price-block__left-side {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
@@ -357,19 +532,19 @@
 
   .price-block__description {
     -webkit-box-flex: 1;
-    -ms-flex: 1 0 100%;
-    flex: 1 0 100%;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
   }
 
   .price-block__right-side {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     row-gap: 0.3125rem;
     -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 
   .price-block__old-cost span {
@@ -404,89 +579,89 @@
 }
 
 @media (min-width: 30em) and (max-width: 120em) {
-  @supports (row-gap: clamp(2.8125rem, 1.0833333333rem + 5.7638888889vw, 8rem)) {
-    .spollers-inner {
-      row-gap: clamp(2.8125rem, 1.0833333333rem + 5.7638888889vw, 8rem);
+@supports (margin-bottom: clamp( 2.8125rem , 1.0833333333rem  +  5.7638888889vw , 8rem )) {
+    .price-spollers:not(:last-child) {
+      margin-bottom: clamp( 2.8125rem , 1.0833333333rem  +  5.7638888889vw , 8rem );
     }
-  }
+}
 
-  @supports not (row-gap: clamp(2.8125rem, 1.0833333333rem + 5.7638888889vw, 8rem)) {
-    .spollers-inner {
-      row-gap: calc(2.8125rem + 5.1875 * (100vw - 30rem) / 90);
+@supports not (margin-bottom: clamp( 2.8125rem , 1.0833333333rem  +  5.7638888889vw , 8rem )) {
+    .price-spollers:not(:last-child) {
+      margin-bottom: calc(2.8125rem + 5.1875 * (100vw - 30rem) / 90);
     }
-  }
+}
 }
 
 @media (min-width: 23.4375em) and (max-width: 75em) {
-  @supports (font-size: clamp(1.125rem, 0.9545454545rem + 0.7272727273vw, 1.5rem)) {
+@supports (font-size: clamp( 1.125rem , 0.9545454545rem  +  0.7272727273vw , 1.5rem )) {
     .price-spollers__title span {
-      font-size: clamp(1.125rem, 0.9545454545rem + 0.7272727273vw, 1.5rem);
+      font-size: clamp( 1.125rem , 0.9545454545rem  +  0.7272727273vw , 1.5rem );
     }
-  }
+}
 
-  @supports not (font-size: clamp(1.125rem, 0.9545454545rem + 0.7272727273vw, 1.5rem)) {
+@supports not (font-size: clamp( 1.125rem , 0.9545454545rem  +  0.7272727273vw , 1.5rem )) {
     .price-spollers__title span {
       font-size: calc(1.125rem + 0.375 * (100vw - 23.4375rem) / 51.5625);
     }
-  }
+}
 
-  @supports (margin-top: clamp(1rem, 0.7727272727rem + 0.9696969697vw, 1.5rem)) {
+@supports (margin-top: clamp( 1rem , 0.7727272727rem  +  0.9696969697vw , 1.5rem )) {
     .price-spollers__body {
-      margin-top: clamp(1rem, 0.7727272727rem + 0.9696969697vw, 1.5rem);
+      margin-top: clamp( 1rem , 0.7727272727rem  +  0.9696969697vw , 1.5rem );
     }
-  }
+}
 
-  @supports not (margin-top: clamp(1rem, 0.7727272727rem + 0.9696969697vw, 1.5rem)) {
+@supports not (margin-top: clamp( 1rem , 0.7727272727rem  +  0.9696969697vw , 1.5rem )) {
     .price-spollers__body {
       margin-top: calc(1rem + 0.5 * (100vw - 23.4375rem) / 51.5625);
     }
-  }
+}
 
-  @supports (font-size: clamp(1rem, 0.9431818182rem + 0.2424242424vw, 1.125rem)) {
+@supports (font-size: clamp( 1rem , 0.9431818182rem  +  0.2424242424vw , 1.125rem )) {
     .price-block__title {
-      font-size: clamp(1rem, 0.9431818182rem + 0.2424242424vw, 1.125rem);
+      font-size: clamp( 1rem , 0.9431818182rem  +  0.2424242424vw , 1.125rem );
     }
-  }
+}
 
-  @supports not (font-size: clamp(1rem, 0.9431818182rem + 0.2424242424vw, 1.125rem)) {
+@supports not (font-size: clamp( 1rem , 0.9431818182rem  +  0.2424242424vw , 1.125rem )) {
     .price-block__title {
       font-size: calc(1rem + 0.125 * (100vw - 23.4375rem) / 51.5625);
     }
-  }
+}
 
-  @supports (font-size: clamp(0.75rem, 0.6931818182rem + 0.2424242424vw, 0.875rem)) {
+@supports (font-size: clamp( 0.75rem , 0.6931818182rem  +  0.2424242424vw , 0.875rem )) {
     .price-block__description {
-      font-size: clamp(0.75rem, 0.6931818182rem + 0.2424242424vw, 0.875rem);
+      font-size: clamp( 0.75rem , 0.6931818182rem  +  0.2424242424vw , 0.875rem );
     }
-  }
+}
 
-  @supports not (font-size: clamp(0.75rem, 0.6931818182rem + 0.2424242424vw, 0.875rem)) {
+@supports not (font-size: clamp( 0.75rem , 0.6931818182rem  +  0.2424242424vw , 0.875rem )) {
     .price-block__description {
       font-size: calc(0.75rem + 0.125 * (100vw - 23.4375rem) / 51.5625);
     }
-  }
+}
 
-  @supports (font-size: clamp(1rem, 0.9431818182rem + 0.2424242424vw, 1.125rem)) {
+@supports (font-size: clamp( 1rem , 0.9431818182rem  +  0.2424242424vw , 1.125rem )) {
     .price-block__current-cost {
-      font-size: clamp(1rem, 0.9431818182rem + 0.2424242424vw, 1.125rem);
+      font-size: clamp( 1rem , 0.9431818182rem  +  0.2424242424vw , 1.125rem );
     }
-  }
+}
 
-  @supports not (font-size: clamp(1rem, 0.9431818182rem + 0.2424242424vw, 1.125rem)) {
+@supports not (font-size: clamp( 1rem , 0.9431818182rem  +  0.2424242424vw , 1.125rem )) {
     .price-block__current-cost {
       font-size: calc(1rem + 0.125 * (100vw - 23.4375rem) / 51.5625);
     }
-  }
+}
 
-  @supports (font-size: clamp(0.75rem, 0.6931818182rem + 0.2424242424vw, 0.875rem)) {
+@supports (font-size: clamp( 0.75rem , 0.6931818182rem  +  0.2424242424vw , 0.875rem )) {
     .price-block__old-cost {
-      font-size: clamp(0.75rem, 0.6931818182rem + 0.2424242424vw, 0.875rem);
+      font-size: clamp( 0.75rem , 0.6931818182rem  +  0.2424242424vw , 0.875rem );
     }
-  }
+}
 
-  @supports not (font-size: clamp(0.75rem, 0.6931818182rem + 0.2424242424vw, 0.875rem)) {
+@supports not (font-size: clamp( 0.75rem , 0.6931818182rem  +  0.2424242424vw , 0.875rem )) {
     .price-block__old-cost {
       font-size: calc(0.75rem + 0.125 * (100vw - 23.4375rem) / 51.5625);
     }
-  }
+}
 }
